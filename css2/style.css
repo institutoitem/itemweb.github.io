@@ -4016,7 +4016,96 @@ input[type="button"].btn-block {
 .tab-content > .active {
   display: block;
 }
+#logo {
+  float: left;
+  padding: 6px 20px;
+  width: auto;
+  height: 60px;
 
+  a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    line-height: 44px;
+    text-transform: uppercase;
+  }
+}
+
+// Fijamos nuestro nav en 100% ancho
+#menu {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+
+  // Quitamos estilos por defecto de el tag UL
+  ul {
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+  }
+
+  // Convertimos nuestra lista de enlaces en un menú horizontal
+  li {
+    display: block;
+    background: #33363b;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 1px solid #282b30;
+
+    // Damos estilo a nuestros enlaces
+    a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      line-height: 60px;
+      padding: 0 26px;
+
+      &:active,
+      &:focus   {
+        color: #ffc700;
+      }
+    }
+  }
+
+  // Agregamos una animación al despliegue del menú
+  .open-menu {
+    box-shadow: 0 1px 2px rgba(0,0,0,.5);
+    max-height: 400px;
+    transition: max-height .4s ease;
+  }
+}
+
+// Botón mostrar menú
+#nav-mobile {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  float: right;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  right: 0;
+  top: -60px;
+  opacity: 0.6;
+
+  // Agregaremos esta clase a #nav-mobile, cuando el menu mobile haya sido desplegado
+  &.nav-open {
+    opacity: 1;
+  }
+
+  span {
+    display: block;
+    width: 60%;
+    margin: 4px auto;
+    height: 4px;
+    background: #fff
+  }
+}
 .navbar {
   position: relative;
   display: flex;
